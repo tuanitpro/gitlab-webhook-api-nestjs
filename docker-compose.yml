@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  gitlab_webhook:
+    build:
+      dockerfile: Dockerfile
+    image: tuanitpro/gitlab_webhook_nestjs
+    container_name: gitlab_webhook_nestjs
+    
+    ports:
+    - 3000:3000
+    networks:
+      - bee_network
+
+networks:
+  bee_network:
+    driver: bridge
